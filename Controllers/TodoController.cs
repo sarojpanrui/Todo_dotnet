@@ -81,12 +81,12 @@ public class TodoController : ControllerBase
     }
 
     [HttpPatch("{id}")]
-    public async Task<ActionResult> Update(string id, [FromBody]TodoItem todo)
+    public async Task<ActionResult> Update(string id, [FromBody] TodoItem todo)
     {
         try
         {
 
-            
+
             await _todoService.Update(id, todo);
             return Ok(new ApiResponse<TodoItem>
             {
@@ -133,6 +133,29 @@ public class TodoController : ControllerBase
         }
 
     }
+
+    [HttpGet("status/{val}")]
+    public async Task<IActionResult> GetByStatus(int val)
+    {
+        var status = (TodoStatus)val;
+        var todos = await _todoService.GetByStatus(status);
+        return Ok(todos);
+    }
+
+    // [HttpGet("jpriority/{val}")]
+
+    [HttpGet("priority/{val}")]
+    public async Task<IActionResult> GetByPriority(int val)
+    {
+        // Convert int to enum
+        var priority = (TodoPriority)val;
+
+        // Call service method
+        var todos = await _todoService.GetByPriority(priority);
+
+        return Ok(todos);
+    }
+
 
 
 

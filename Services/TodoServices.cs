@@ -51,7 +51,7 @@ public class TodoServices
 
     public async Task Update(string id, TodoItem updatedtodo)
     {
-        updatedtodo.Id = id; 
+        updatedtodo.Id = id;
         await _TodoItem.ReplaceOneAsync(todo => todo.Id == id, updatedtodo);
     }
 
@@ -60,6 +60,20 @@ public class TodoServices
     {
         await _TodoItem.DeleteOneAsync(todo => todo.Id == id);
     }
+
+
+    public async Task<List<TodoItem>> GetByStatus(TodoStatus status)
+    {
+        // Use Find and ToListAsync
+        return await _TodoItem.Find(todo => todo.status == status).ToListAsync();
+    }
+
+
+    public async Task<List<TodoItem>> GetByPriority(TodoPriority priority)
+    {
+        return await _TodoItem.Find(todo => todo.priority == priority).ToListAsync();
+    }
+
 
 
 

@@ -39,3 +39,4 @@ E:\dotnet-back\TodoApi\bin\Debug\net9.0\ZstdSharp.dll
 E:\dotnet-back\TodoApi\bin\Debug\net9.0\Swashbuckle.AspNetCore.Swagger.dll
 E:\dotnet-back\TodoApi\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 E:\dotnet-back\TodoApi\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+E:\dotnet-back\TodoApi\obj\Debug\net9.0\TodoApi.sourcelink.json

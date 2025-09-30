@@ -17,10 +17,32 @@ namespace TodoApi.Models
 
         public string Description { get; set; }
 
-        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+        public TodoStatus status { get; set; } = TodoStatus.InProgress;
+
+
+
+        public TodoPriority priority { get; set; } = TodoPriority.Medium;
+        public DateTime CreatedAt
+        { get; set; } = DateTime.UtcNow;
 
         public string CreatedBy { get; set; } = "user";
 
+    }
+
+    public enum TodoStatus
+    {
+        pending,
+        InProgress,
+
+        Resolved
+
+    }
+
+    public enum TodoPriority
+    {
+        Low,
+        Medium,
+        High
     }
 
 
